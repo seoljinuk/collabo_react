@@ -5,8 +5,6 @@ import MenuItems from './ui/MenuItems';
 import AppRoutes from './routes/AppRoutes';
 
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { API_BASE_URL } from './config/config';
 import { useNavigate } from 'react-router-dom';
 
 function App() {
@@ -31,21 +29,14 @@ function App() {
 
   const navigate = useNavigate();
 
+  // 로그인한 사용자가 '로그 아웃' 버튼을 클릭했습니다.
   const handleLogout = (event) => {
     event.preventDefault();
 
-    const url = `${API_BASE_URL}/member/logout`;
-
-    axios.post(url)
-      .then(() => {
-        setUser(null);
-        localStorage.removeItem('user');
-        console.log('로그 아웃 성공');
-        navigate(`/member/login`);
-      })
-      .catch((error) => {
-        console.log('로그 아웃 실패', error);
-      });
+    setUser(null);
+    localStorage.removeItem('user');
+    console.log('로그 아웃 성공');
+    navigate(`/member/login`);
   };
 
   return (
