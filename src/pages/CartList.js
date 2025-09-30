@@ -209,8 +209,6 @@ function App({ user }) {
             console.log('주문 기능 실패');
             console.log(error);
         };
-
-        alert('주문 성공');
     };
 
     return (
