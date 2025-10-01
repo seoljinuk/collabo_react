@@ -81,6 +81,56 @@ function App({ user }) {
         );
     };
 
+    // const makeAdminButton = (bean) => {
+    //     //if (user?.role !== "ADMIN") return null; // 일반 사용자는 버튼 없음
+
+    //     // 버튼 클릭 시 상태 변경
+    //     const changeStatus = async (newStatus) => {
+    //         try {
+    //             const url = `${API_BASE_URL}/order/update/status/${bean.orderId}`;
+    //             const parameters = { status: newStatus };
+
+    //             await axios.put(url, parameters);
+    //             alert(`주문 상태가 ${newStatus}로 변경되었습니다.`);
+    //             window.location.reload(); // 상태 변경 후 화면 갱신
+
+    //         } catch (error) {
+    //             console.log(error);
+    //             alert('주문 상태 변경에 실패했습니다.');
+    //         }
+    //     };
+
+    //     return (
+    //         <div className="d-flex gap-2">
+    //             <Button
+    //                 variant={bean.status === "PENDING" ? "dark" : "warning"}
+    //                 size="sm"
+    //                 disabled={bean.status === "PENDING"}
+    //                 onClick={() => changeStatus("PENDING")}
+    //             >
+    //                 대기
+    //             </Button>
+    //             <Button
+    //                 variant={bean.status === "COMPLETED" ? "dark" : "success"}
+    //                 size="sm"
+    //                 disabled={bean.status === "COMPLETED"}
+    //                 onClick={() => changeStatus("COMPLETED")}
+    //             >
+    //                 완료
+    //             </Button>
+    //             <Button
+    //                 variant={bean.status === "CANCELED" ? "dark" : "danger"}
+    //                 size="sm"
+    //                 disabled={bean.status === "CANCELED"}
+    //                 onClick={() => changeStatus("CANCELED")}
+    //             >
+    //                 취소
+    //             </Button>
+    //         </div>
+    //     );
+    // };
+
+
     if (loading) {
         return (
             <div className="d-flex justify-content-center align-items-center p-5">
