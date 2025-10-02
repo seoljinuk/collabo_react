@@ -49,7 +49,9 @@ function App({ user }) {
 
     // 관리자를 위한 컴포넌트, 함수
     const makeAdminButton = (bean) => {
-        if (user?.role !== "ADMIN") return null;
+        // 로그인 하지 않았으면 null을 리턴
+        if (user?.role !== "ADMIN" && user?.role !== "USER") return null;       
+        // if (!["ADMIN", "USER"].includes(user?.role)) return null;
 
         // `완료` 버튼을 클릭하여 `PENDING` 모드를 `COMPLETED` 모드로 변경합니다.
         const changeStatus = async (newStatus) => {
